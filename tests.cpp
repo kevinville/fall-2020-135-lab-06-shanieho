@@ -32,10 +32,12 @@ TEST_CASE("decrypt caesar"){
     CHECK(decryptCaesar("hi :)", 0) == "hi :)"); 
     CHECK(decryptCaesar("Iqqf oqtpkpi", 2) == "Good morning");   
     CHECK(decryptCaesar("Bfd yt Lt!", 5) == "Way to Go!");
+    CHECK(decryptCaesar("Good afternoon", 78) == "Good afternoon");
 }
 
 TEST_CASE("decrypt vigenere"){
     CHECK(decryptVigenere("Jevpq, Wyvnd!", "cake") == "Hello, World!");
     CHECK(decryptVigenere("hj", "abcdefg") == "hi");
-    CHECK(decryptVigenere("1 2 3 ", "cake") == "1 2 3 ");    
+    CHECK(decryptVigenere("1 2 3 ", "cake") == "1 2 3 ");  
+    CHECK(decryptVigenere("1 2 3 ", "a") == "1 2 3 ");  
 }

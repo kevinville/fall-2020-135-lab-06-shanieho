@@ -12,13 +12,13 @@ string decryptCaesar(string ciphertext, int rshift){
         else{
             ascii = (int)ciphertext[i] - rshift;
             if(isupper(ciphertext[i])){
-                if (ascii < 65){
+                while (ascii < 65){
                     ascii = ascii + 26;
                 }
                 decrypt += char(ascii);
             }
             else{
-                if (ascii < 97){
+                while (ascii < 97){
                     ascii += 26;
                 }
                 decrypt += char(ascii);
@@ -37,11 +37,15 @@ string decryptVigenere(string ciphertext, string keyword){
         if(isalpha(ciphertext[i])){
             key = keyIndex % keyword.length();
             ascii = (int)ciphertext[i] - (int)(keyword[key] - 97) ;
-            if (isupper(ciphertext[i]) && ascii < 65){
-                ascii += 26;
+            if (isupper(ciphertext[i])){
+                while (ascii < 65){
+                    ascii += 26;
+                }
             }
-            else if (islower(ciphertext[i]) && ascii < 97){
-                ascii += 26;
+            else if (islower(ciphertext[i])){
+                while (ascii < 97){
+                    ascii += 26;
+                }
             }
             decrypt += char(ascii);
             keyIndex ++;

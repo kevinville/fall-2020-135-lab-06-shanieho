@@ -17,11 +17,15 @@ string encryptVigenere (string plaintext, string keyword){
                                                 //1st letter of keyword and we can use mod to access that
             ascii = (int)(plaintext[i]) + (int)(keyword[key]-97);   //subtract 97 to indicate the number of
                                                                     //shifts based on the letter in keyword
-            if (isupper(plaintext[i]) && ascii > 90){ //used to loop around from A-Z only
-                ascii = ascii - 26;
+            if (isupper(plaintext[i])){ //used to loop around from A-Z only
+                while (ascii > 90){
+                    ascii = ascii - 26;
+                }
             }
-            if (islower(plaintext[i])&& ascii > 122){   //used to loop around from a-z only
-                ascii = ascii - 26;
+            if (islower(plaintext[i])){   //used to loop around from a-z only
+                while (ascii > 122){
+                    ascii = ascii - 26;
+                }
             }
             encrypt += char(ascii);
             keyIndex++;

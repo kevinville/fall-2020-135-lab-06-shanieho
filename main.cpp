@@ -19,6 +19,8 @@ int main()
   cout << "Wow encrypted with a right shift of 3 is: " << a <<endl;
   a = encryptCaesar("Wow", -1);
   cout << "Wow encrypted with right shift of -1 is: " << a <<endl;
+  a = encryptCaesar("Wow", 52);
+  cout << "Wow encrypted with right shift of 52 is: " << a <<endl;
 
   string b = encryptVigenere("Hello, World!","cake");
   cout << b<< endl;
