@@ -4,6 +4,7 @@
 #include "caesar.h"
 #include "vigenere.h"
 #include "decrypt.h"
+#include "decode.h"
 
 // add your tests here
 TEST_CASE("small rshift"){
@@ -40,4 +41,11 @@ TEST_CASE("decrypt vigenere"){
     CHECK(decryptVigenere("hj", "abcdefg") == "hi");
     CHECK(decryptVigenere("1 2 3 ", "cake") == "1 2 3 ");  
     CHECK(decryptVigenere("1 2 3 ", "a") == "1 2 3 ");  
+}
+
+TEST_CASE("decode phrases"){
+    CHECK(decode("bmfy f btsijwkzq ynrj ny nx yt gj fqnaj wnlmy stb") == "what a wonderful time it is to be alive right now");
+    CHECK(decode("Bmfy f btsijwkzq ynrj ny nx yt gj fqnaj wnlmy stb!") == "What a wonderful time it is to be alive right now!");
+    CHECK(decode("Q tqsm twvo eitsa ib bpm jmikp epqtm eibkpqvo bpm acvamb") == "I like long walks at the beach while watching the sunset");
+
 }

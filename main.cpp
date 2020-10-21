@@ -6,6 +6,7 @@ using namespace std;
 #include "caesar.h"
 #include "vigenere.h"
 #include "decrypt.h"
+#include "decode.h"
 
 int main()
 {
@@ -36,6 +37,16 @@ int main()
   cout << d <<endl;
   d = decryptVigenere("1 2 3 ", "cake");
   cout << d <<endl;
+  
+  string f = encryptCaesar("what a wonderful time it is to be alive right now",5);
+  cout << f <<endl;
+  f = encryptCaesar("I like long walks at the beach while watching the sunset", 8);
+  cout << f << endl;
+
+  string e = decode("bmfy f btsijwkzq ynrj ny nx yt gj fqnaj wnlmy stb");
+  cout << e << endl;
+  e = decode ("Q tqsm twvo eitsa ib bpm jmikp epqtm eibkpqvo bpm acvamb");
+  cout << e <<endl;
   
   return 0;
 }
