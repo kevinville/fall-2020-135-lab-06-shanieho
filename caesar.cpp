@@ -11,14 +11,14 @@ char shiftChar (char c, int rshift){
     int ascii = 0;
     if (isupper(c)){
         ascii = ((int)c + rshift);
-        while (ascii >90){
+        while (ascii > 'Z'){ //changed asci to char
             ascii = ascii - 26;
         }
         newCh = char(ascii);
         }
     else if (islower(c)){
         ascii = ((int)c + rshift);
-        while (ascii > 122){
+        while (ascii > 'z'){ //changed ascii to char
             ascii = ascii - 26;
         }
         newCh = char(ascii);
